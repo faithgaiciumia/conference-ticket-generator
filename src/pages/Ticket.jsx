@@ -2,23 +2,37 @@
 import { Box, Flex, Heading, Image, Text } from "@chakra-ui/react";
 import { BiSmile } from "react-icons/bi";
 
-export default function Ticket({ name, date, ticketNo }) {
+export default function Ticket({ name, ticketNo }) {
   return (
     <Flex justify={"center"} p={4} align={"center"}>
       <Box bg={"white"} w={"70%"} h={"100%"} boxShadow={"lg"}>
         <Flex>
           <Box w={"25%"}>
             <Box
-              backgroundImage={"url('https://picsum.photos/600/300')"}
+              backgroundImage={"url('https://picsum.photos/id/111/1000')"}
               backgroundColor={"pink.300"}
-              backgroundSize={"contain"}
-              h={"60vh"}
+              backgroundSize={"cover"}
+              backgroundPosition={"center"}
+              h={"100%"}
             >
-              <Flex h={"100%"} justify={"end"} align={"end"}>
-                <Text mx={4} fontWeight={600}>
+              {/* <Flex
+                direction={"column"}
+                justify={"end"}
+                align={"end"}
+                h={"100%"}
+                backgroundColor={"rgba(255, 255, 255, 0.2)"}
+              >
+                <Text
+                  fontWeight={600}
+                  fontSize={"md"}
+                  align={"end"}
+                  color={"pink.300"}
+                  mx={4}
+                  fontFamily={"Poppins, serif"}
+                >
                   #{ticketNo}
                 </Text>
-              </Flex>
+              </Flex> */}
             </Box>
           </Box>
           <Box m={4} w={"50%"}>
@@ -31,9 +45,27 @@ export default function Ticket({ name, date, ticketNo }) {
               borderBottomWidth={"1px"}
               p={2}
             >
-              <Text>Tuesday</Text>
-              <Text>June 29th</Text>
-              <Text>2021</Text>
+              <Text
+                fontSize={"sm"}
+                fontFamily={"Poppins, serif"}
+                fontWeight={600}
+              >
+                Tuesday
+              </Text>
+              <Text
+                fontSize={"sm"}
+                fontFamily={"Poppins, serif"}
+                fontWeight={600}
+              >
+                June 29th
+              </Text>
+              <Text
+                fontSize={"sm"}
+                fontFamily={"Poppins, serif"}
+                fontWeight={600}
+              >
+                2021
+              </Text>
             </Flex>
             <Flex
               w={"100%"}
@@ -45,41 +77,92 @@ export default function Ticket({ name, date, ticketNo }) {
               borderBottomWidth={"1px"}
             >
               <Box>
-                <Heading>Sour Prom</Heading>
-                <Heading>Olivia Rodrigo</Heading>
+                <Heading fontFamily={"'Playwrite VN', serif"}>
+                  Sunset GT
+                </Heading>
+                <Heading
+                  fontSize={"md"}
+                  fontFamily={"Poppins, serif"}
+                  my={2}
+                  align={"center"}
+                >
+                  3rd Edition
+                </Heading>
               </Box>
-              <Box>
-                <Text>8:00 PM to 11:00 PM</Text>
-                <Text>Doors @ 7:00 PM</Text>
+              <Box my={2}>
+                <Text
+                  align={"center"}
+                  fontFamily={"Poppins, serif"}
+                  fontSize={"sm"}
+                  color={"pink.600"}
+                >
+                  Ticket Holder: {name}
+                </Text>
+                <Text
+                  align={"center"}
+                  fontFamily={"Poppins, serif"}
+                  fontSize={"sm"}
+                  color={"pink.600"}
+                >
+                  Ticket No: #{ticketNo}
+                </Text>
               </Box>
             </Flex>
             <Flex align={"center"} justify={"center"} gap={6} p={4}>
-              <Text>East High School</Text>
+              <Text fontFamily={"Poppins, serif"} fontSize={"sm"}>
+                Carnivore Grounds
+              </Text>
               <Text>
                 <BiSmile />
               </Text>
-              <Text>Salt Lake, Utah</Text>
+              <Text>Langata, Nairobi</Text>
             </Flex>
           </Box>
           <Box
-            w={"25%"}
-            borderLeftWidth={"1px"}
+            w={"30%"}
+            borderLeftWidth={"2px"}
             borderLeftStyle={"dashed"}
-            borderLeftColor={"gray.400"}
-            m={4}
+            borderLeftColor={"gray.600"}
           >
-            <Box mx={4}>
-              <Heading fontSize={"sm"}>Sour Prom</Heading>
+            <Box m={4}>
+              <Heading
+                fontFamily={"'Playwrite VN', serif"}
+                fontSize={"md"}
+                align={"center"}
+              >
+                Sunset GT
+              </Heading>
             </Box>
-            <Box mx={4}>
-              <Text>8:00PM to 11:00PM</Text>
-              <Text>Doors @ 7:00PM</Text>
+            <Box m={4}>
+              <Text
+                fontWeight={"600"}
+                fontFamily={"Poppins, serif"}
+                fontSize={"sm"}
+                align={"center"}
+              >
+                {name}
+              </Text>
+              <Text
+                fontWeight={"600"}
+                fontFamily={"Poppins, serif"}
+                fontSize={"sm"}
+                align={"center"}
+              >
+                #{ticketNo}
+              </Text>
             </Box>
-            <Box mx={4}>
-              <Image src="" alt="QR-Code" />
+            <Box m={4}>
+              <Image src="/src/assets/qrcode.png" alt="QR-Code" />
             </Box>
-            <Box mx={4}>
-              <Text># {ticketNo}</Text>
+            <Box m={4}>
+              <Text
+                fontSize={"sm"}
+                fontFamily={"Poppins, serif"}
+                color={"gray.500"}
+                align={"center"}
+              >
+                * Terms and Conditions Apply
+              </Text>
             </Box>
           </Box>
         </Flex>

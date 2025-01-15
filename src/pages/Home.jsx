@@ -17,19 +17,17 @@ export default function Home() {
   const [formData, setFormData] = useState(null);
 
   const onSubmit = (data) => {
-    console.log(data);
     setFormData(data);
     setDataReceived(true);
   };
   return (
     <Box bg={"pink.100"} h={"100vh"}>
       <Flex justify={"center"} align={"center"} p={8}>
-        <Heading fontSize={"md"}>Blankets & Wine</Heading>
+        <Heading fontSize={"md"} fontFamily={"Poppins, serif"}>Sunset GT 2024 - Ticket Generator</Heading>
       </Flex>
       {dataReceived ? (
         <Ticket
           name={formData.name}
-          date={formData.date}
           ticketNo={formData.ticketNo}
         />
       ) : (
